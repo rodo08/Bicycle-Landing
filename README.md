@@ -9,4 +9,4 @@ Este proyecto es una **landing page** para "Cruiser Bicycles". Está diseñado u
 
 ## Ver en Vivo
 
-Puedes ver la página desplegada [aquí](https://example.com).
+Puedes ver la página desplegada [aquí](https://bicycle-landing.vercel.app/).
