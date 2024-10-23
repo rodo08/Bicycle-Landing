@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Oxanium", cursive;
+  color: #fff;
+}
+:root {
+  --prime: #ff358a;
+  --dark: #1a1729;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle, #32393c 19%, #00050e 99%);
+}
+
+.navbar {
+  position: fixed;
+  display: flex;
+  height: 120px;
+  width: 100%;
+  line-height: 120px;
+  justify-content: space-between;
+  padding: 0 100px;
+  z-index: 999;
+}
+
+.navbar__logo {
+  height: 100%;
+  scale: 0.8;
+}
+
+.navbar__logo a {
+  height: inherit;
+}
+
+.navbar__logo a svg {
+  position: absolute;
+  filter: invert(1);
+  height: inherit;
+}
+
+.navbar__list {
+  display: flex;
+  list-style: none;
+  gap: 2vw;
+}
+
+.navbar__item a {
+  position: relative;
+  text-decoration: none;
+  list-style: none;
+  font-size: 1.2em;
+  text-transform: capitalize;
+}
+
+.navbar__item a::after {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: var(--prime);
+  left: 50%;
+  transform: translate(-50%);
+  bottom: -10px;
+  transition: 0.1s ease;
+}
+
+.navbar__item a:hover::after {
+  width: 100%;
+}
+
+.navbar__login-btn a {
+  text-decoration: none;
+}
+
+.navbar__login-btn a i {
+  font-size: 1.2em;
+  margin-right: 0.4em;
+}
+
+.navbar__login-btn a span {
+  font-size: 1.1em;
+  word-spacing: -3px;
+}
+
+.navbar__login-btn a:hover i,
+.navbar__login-btn a:hover span {
+  color: var(--dark);
+  transition: 0.1s ease-in;
+}
+
+/*home*/
+.home {
+  min-height: 100vh;
+  display: grid;
+  position: relative;
+  align-items: center;
+  padding: 0 5vw;
+  grid-template-columns: 1fr 1.5fr;
+  background: linear-gradient(to right, transparent 70%, #ff2d2d 30%, #ff358a);
+}
+
+.home__textarea {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+  margin-top: 5em;
+}
+
+.home__hero-title {
+  font-family: "Courgette", cursive;
+  font-size: 12vw;
+  font-weight: 600;
+  line-height: 0.45em;
+  margin-bottom: 0.2em;
+}
+
+.home__hero-title span {
+  font-size: 7vw;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--prime);
+  animation: textShadow 5s ease-in infinite;
+}
+
+@keyframes textShadow {
+  50% {
+    text-shadow: 0 0 150px var(--prime);
+  }
+}
+
+.home__hero-label {
+  font-family: "Courgette", cursive;
+  font-size: 2.5vw;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.home__hero-description {
+  font-size: 0.9vw;
+  margin-top: 1em;
+  font-weight: 300;
+}
+
+.home__imgdata {
+  position: relative;
+  margin-top: 5em;
+}
+
+.home__imgbox {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.home__slider {
+  position: relative;
+  display: flex;
+  height: 100%;
+  animation: scrollX 8s ease infinite;
+}
+
+@keyframes scrollX {
+  0%,
+  10% {
+    transform: translateX(0%);
+  }
+  20%,
+  50% {
+    transform: translateX(-100%);
+  }
+  60%,
+  80% {
+    transform: translateX(-200%);
+  }
+  90%,
+  100% {
+    transform: translateX(-300%);
+  }
+}
+
+.home__slider img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  margin: auto 0;
+}
+
+.home__socialicons {
+  position: absolute;
+  bottom: 5%;
+  right: 15%;
+}
+
+.home__socialicon {
+  position: relative;
+  display: inline-block;
+  height: 2.5em;
+  width: 2.5em;
+  line-height: 2.5em;
+  text-align: center;
+  margin: 0 0.8em;
+  cursor: pointer;
+  transition: 0.2s ease;
+  overflow: hidden;
+}
+
+.home__socialicon:hover {
+  border: 2px solid white;
+  transform: rotate(45deg);
+}
+
+.home__socialicon i {
+  scale: 3;
+  transition: 0.2s ease;
+}
+
+.home__socialicon:hover i {
+  transform: rotate(-45deg);
+  scale: 1.6;
+}
+
+.home__socialicon::before {
+  position: absolute;
+  content: "";
+  bottom: -40%;
+  height: 30%;
+  width: 150%;
+  background: var(--dark);
+  transform-origin: bottom;
+  transform: rotate(-45deg);
+  transition: 0.1s 0.1s ease;
+}
+
+.home__socialicon:hover::before {
+  height: 200%;
+  scale: 1.5;
+  transition: 0.4s 0.3s ease;
+}
